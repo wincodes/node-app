@@ -1,0 +1,10 @@
+extend layout
+
+block content
+    h1 #{input}
+
+    ul
+        each article, i in articles
+            li.list-group-item
+                a(href="/article/"+article._id)= article.title
+

@@ -1,0 +1,31 @@
+doctype html
+html   
+    head
+        title My Node Js CRUD app
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet' href='/css/style.css')
+    body
+        nav.navbar.navbar-inverse.navbar-dark.bg-dark
+            a.navbar-brand(href='/') Node Js App
+            if user
+                a.navbar-brand(href='/article/add') Add Article
+            if user
+                a.navbar-brand(href='/user/logout') logout
+            else
+                a.navbar-brand(href='/user/register') Register
+                a.navbar-brand(href='/user/login') Login
+            
+
+        .container
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+            block content
+            br
+            hr
+            footer
+                p copyright Godwin &copy 2017
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='/js/main.js')

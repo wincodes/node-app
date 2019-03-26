@@ -1,1 +1,1 @@
-# node-app with crud function fully operational
+# node-app with crud functions
